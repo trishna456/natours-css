@@ -6,3 +6,37 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+/* basic reset using universal selector*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* setting project-wide font definitions, since they will all be inherited to their child elements */
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  /* 1.7 times bigger than the predefined line height */
+  color: #777;
+  padding: 30px;
+}
+
+.header {
+  height: 95vh;
+  /* to always be 95% of the view port height */
+  background-image: linear-gradient(
+      to right bottom,
+      rgb(126, 213, 111, 0.8),
+      rgb(40, 180, 133, 0.8)
+    ),
+    url('../img/hero.jpg');
+  background-size: cover;
+  /* will always try to fit the image in the viewport or parent element's width/box */
+  background-position: top;
+  /* if we change the image size, it will always stay at the top and rest of the things will get cropped out eg. from bottom, sides etc */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
